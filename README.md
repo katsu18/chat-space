@@ -9,7 +9,7 @@
 |email|integer|null: false,|
 |password|integer|null: false,|
 ### Association
-- has_many :group thothrough: :user-group
+- has_many :group through: :user-group
 - has_many :pictures
 - has_many :messages
 
@@ -46,8 +46,8 @@
 |messages_id|references|foreign_key: true|
 
 ### Association
-- has_many :user thothrough: :user-group
-- has_many :messages
+- has_many :user through: :user-group
+- has_many :message
 
 
 
