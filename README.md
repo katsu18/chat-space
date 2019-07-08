@@ -1,12 +1,14 @@
 # README
 
-DB設計
+＃DB      
 
+##user table
+|Column|Type|Options|
+|------|----|-------|
+|name|integer|null: false,|
+|email|integer|null: false,|
 
-
-
-
-## membersテーブル
+## members table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -15,3 +17,4 @@ DB設計
 
 ### Association
 - belongs_to :group
+- belongs_to :user
