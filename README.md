@@ -2,64 +2,52 @@
 
 # DB      
 
-## user table
+## users table
 |Column|Type|Options|
 |------|----|-------|
-|name|integer|null: false,|
-|email|integer|null: false,|
-|password|integer|null: false,|
+|name|string|null: false,index: true|
+|email|string|null: false,|
+|password|string|null: false,|
 ### Association
-- has_many :group through: :user-group
-- has_many :picture
-- has_many :message
+- has_many :groups, through: :user-group
+- has_many :user-groups
+- has_many :messages
 
-## message  table
+## messages  table
 
 |Column|Type|Options|
 |------|----|-------|
-|text|integer||
+|text|string|null: false|
+|picturs|string||
 |user_id|references|null: false, foreign_key: true|
 |group_id|references|null: false, foreign_key: true|
-|pictuers_id|references|foreign_key: true|
 
-### Association
-- has_many :picture
-- belongs_to :user
-- belongs_to :group
-
-## user-group  table
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|group_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
 - belongs_to :group
 
-## group  table
+## user-groups  table
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|messages_id|references|foreign_key: true|
-
-### Association
-- has_many :user through: :user-group
-- has_many :message
-
-## group  picture
-
-|Column|Type|Options|
-|------|----|-------|
-|name|text|null: false|
-|user_id|references|null: false, foreign_key: true|
-|messages_id|references|foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
-- belongs_to :message
+- belongs_to :groups
+
+## groups  table
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false,index: true|
+
+### Association
+- has_many :user, through: :user-group
+- has_many :user-groups
+- has_many :messages
 
 
 
