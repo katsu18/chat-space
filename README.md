@@ -9,7 +9,7 @@
 |email|string|null: false,|
 |password|string|null: false,|
 ### Association
-- has_many :groups, through: :user-group
+- has_many :groups, through: :user-groups
 - has_many :user-groups
 - has_many :messages
 
@@ -17,15 +17,15 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|text|string|null: false|
+|text|text||
 |picturs|string||
 |user_id|references|null: false, foreign_key: true|
 |group_id|references|null: false, foreign_key: true|
 
 
 ### Association
-- belongs_to :user
-- belongs_to :group
+- belongs_to :users
+- belongs_to :groups
 
 ## user-groups  table
 
@@ -45,7 +45,7 @@
 |name|string|null: false,index: true|
 
 ### Association
-- has_many :user, through: :user-group
+- has_many :users, through: :user-groups
 - has_many :user-groups
 - has_many :messages
 
