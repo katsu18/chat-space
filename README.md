@@ -53,6 +53,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
+|name|text|null: false|
 |user_id|references|null: false, foreign_key: true|
 |messages_id|references|foreign_key: true|
 
