@@ -22,7 +22,23 @@
     width: 300px;
     color: white;
     float: left;
-  }
+    .groups{
+      height: calc(100vh - 100px);
+      background-color: #2f3e51;
+      padding: 20px 20px 0;
+      overflow: scroll;
+      .group{
+        &__name{
+          font-size: 15px;
+          margin-bottom: 5px;
+        }
+        &__latest-message{
+          font-size: 11px;
+        }
+      }
+    }
+  
+
     .side-header{
       background-color: #253141;
       height: 100px;
@@ -32,24 +48,22 @@
       justify-content: space-between;
       width: 100%;
       font-weight: bold;
-    
-      &__user-name{
-        clolor: pink;
-      
-      
-      }
+      &__box{
+        &__user-menu{
+          display: flex;
+          list-style: none;
+          &__edit-user{
+            margin-left: 0.3rem;
+          }
+          &__new-group{
+            margin-left: 0.3rem;
+          }
+        }
+     }
     }
-      .user-menu{
-        display: flex;
-        list-style: none;
+  }
+  .chat-main{
+    width: calc(100vw - 300px);
+    float: left;
+  }
       
-        &__edit-user{
-          margin-left: 0.3rem;
-        }
-        &__new-group{
-          margin-left: 0.3rem;
-        }
-      }
-
-    
-

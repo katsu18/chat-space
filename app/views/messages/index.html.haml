@@ -3,14 +3,45 @@
 .wallpaper
   .chat-side
     .side-header
-      %p.side-header__user-name
-        test_user
-      %ul.user-menu
-        %li.user-menu__edit-user
-          = fa_icon 
-        %li.user-menu__new-group
-          = fa_icon
+      .side-header__box    
+        %p.side-header__box__user-name
+          test_user
+        %ul.side-header__box__user-menu
+          %li.side-header__box__user-menu__edit-user
+            = fa_icon 
+          %li.side-header__box__user-menu__new-group
+            = fa_icon
     .groups
+      .group
+        %p.group__name
+          group名
+        %p.group__latest-message
+          最新メッセージ
+  .chat-main
+    .main-header
+      .main-header__leftbox
+        .main-header__left-box__current-group
+          Currenr-group
+        %ul.main-header__left-box__member-list
+          Member
+          %il.main-header__left-box__member-list
+      %a
+        .main-header__edit-btn
+          edit
+    .massages
+      .massage
+        .message__upper-info
+          %p.massage__upper-info__talker
+          %p.massage__upper-info__date
+        %p.massage__text
+    .form
+      %form.new_message
+      
+
+
+
+
+      
 
 
 
