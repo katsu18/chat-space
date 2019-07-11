@@ -12,11 +12,8 @@ $base-color: #38aef0;
   height: 25px;
   background-color: $base-color;
   color: white;
-  text-align: center;
-  
+  text-align: center;  
 }
-
-
   .chat-side{
     width: 300px;
     color: white;
@@ -37,6 +34,8 @@ $base-color: #38aef0;
         }
       }
     }
+  
+
     .side-header{
       background-color: #253141;
       height: 100px;
@@ -106,7 +105,7 @@ $base-color: #38aef0;
     .input-box {
       position: relative;
       width: 100%;
-      &__text {
+      %__text {
         height: 50px;
         width: 100%;
         padding: 0 40px 0 10px;
