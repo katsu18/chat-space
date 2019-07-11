@@ -1,0 +1,47 @@
+.flash-box
+  新着メッセージ
+.wallpaper
+  .chat-side
+    .side-header     
+      %p.side-header__user-name
+        test_user
+      %ul.side-header__user-menu
+        %li.side-header__user-menu__edit-user
+          %i.fa.fa-edit
+        %li.side-header__user-menu__new-group
+          %i.fa.fa-cog
+    .groups
+      .group
+        %p.group__name
+          group名
+        %p.group__latest-message
+          最新メッセージ
+  .chat-main
+    .main-header
+      .current-group
+        %h2.current-group__name
+          Currenr-group
+        %ul.member-list
+          Member:
+          %il.member-list__member
+            abcd
+      %a 
+        .main-header__edit-btn
+          edit
+    .messages
+      .message
+        .upper-info
+          %p.upper-info__user
+            user1
+          %p.upper-info__date
+            1234/23/32(fri)
+        %p.message__text
+          おはよう
+    .form
+      %form.new-message
+        .input-box
+          %input#message_content.input-box__text
+          %label.image-label
+            %i.fa.fa-image
+        %imput.image-label__input
+          %input.new-message__submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
