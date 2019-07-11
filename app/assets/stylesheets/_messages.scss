@@ -119,6 +119,13 @@ $base-color: #38aef0;
         right: 10px;
         cursor: pointer;
       }
+      .input-box__text {
+        height: 50px;
+        width: 100%;
+        padding: 0 40px 0 10px;
+        color: #434a54;
+        border-style: none;
+     }
     }
   &__submit-btn {
       width: 100px;
