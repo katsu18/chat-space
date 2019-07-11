@@ -2,15 +2,14 @@
   新着メッセージ
 .wallpaper
   .chat-side
-    .side-header
-      .side-header__box    
-        %p.side-header__box__user-name
-          test_user
-        %ul.side-header__box__user-menu
-          %li.side-header__box__user-menu__edit-user
-            = fa_icon 
-          %li.side-header__box__user-menu__new-group
-            = fa_icon
+    .side-header     
+      %p.side-header__user-name
+        test_user
+      %ul.side-header__user-menu
+        %li.side-header__user-menu__edit-user
+          %i.fa.fa-edit
+        %li.side-header__user-menu__new-group
+          %i.fa.fa-cog
     .groups
       .group
         %p.group__name
@@ -19,23 +18,37 @@
           最新メッセージ
   .chat-main
     .main-header
-      .main-header__leftbox
-        .main-header__left-box__current-group
+      .current-group
+        %h2.current-group__name
           Currenr-group
-        %ul.main-header__left-box__member-list
-          Member
-          %il.main-header__left-box__member-list
-      %a
+        %ul.member-list
+          Member:
+          %il.member-list__member
+            abcd
+      %a 
         .main-header__edit-btn
           edit
-    .massages
-      .massage
-        .message__upper-info
-          %p.massage__upper-info__talker
-          %p.massage__upper-info__date
-        %p.massage__text
+    .messages
+      .message
+        .upper-info
+          %p.upper-info__user
+            user1
+          %p.upper-info__date
+            1234/23/32(fri)
+        %p.message__text
+          おはよう
     .form
-      %form.new_message
+      %form.new-message
+        .input-box
+          %input#message_content.input-box__text
+          %label.image-label
+            %i.fa.fa-image
+        %imput.image-label__input
+          %input.new-message__submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+
+          
+
+
       
 
 
