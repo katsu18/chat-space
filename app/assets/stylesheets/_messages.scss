@@ -7,13 +7,6 @@ $base-color: #38aef0;
   display: none;
 }
 
-.flash-box{
-  width: 100%;
-  height: 25px;
-  background-color: $base-color;
-  color: white;
-  text-align: center;  
-}
   .chat-side{
     width: 300px;
     color: white;
@@ -119,6 +112,13 @@ $base-color: #38aef0;
         right: 10px;
         cursor: pointer;
       }
+      .input-box__text {
+        height: 50px;
+        width: 100%;
+        padding: 0 40px 0 10px;
+        color: #434a54;
+        border-style: none;
+     }
     }
   &__submit-btn {
       width: 100px;
