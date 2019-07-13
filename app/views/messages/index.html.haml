@@ -1,49 +1,22 @@
-.wallpaper
-  .chat-side
-    .side-header     
-      %p.side-header__user-name
-        = current_user.name
-      %ul.side-header__user-menu
-        %li.side-header__user-menu__edit-user
-          = link_to new_group_path do
-            = fa_icon 'pencil-square-o', class: 'icon'
-        %li.side-header__user-menu__new-group
-          = link_to edit_user_path(current_user) do
-            = fa_icon 'cog', class: 'icon'
-    .groups
-      - current_user.groups.each do |group|
-        .group
-          = link_to group_messages_path(group) do
-            %p.group__name
-              = group.name
-            %p.group__latest-message
-              No message
-  .chat-main
-    .main-header
-      .current-group
-        %h2.current-group__name
-          Currenr-group
-        %ul.member-list
-          Member:
-          %il.member-list__member
-            abcd
-      %a 
-        .main-header__edit-btn
-          edit
-    .messages
-      .message
-        .upper-info
-          %p.upper-info__user
-            user1
-          %p.upper-info__date
-            1234/23/32(fri)
-        %p.message__text
-          おはよう
-    .form
-      %form.new-message
-        .input-box
-          %input#message_content.input-box__text
-            %label.image-label
-              %i.fa.fa-image
-              %imput.image-label__input
-        %input.new-message__submit-btn{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
+.chat-main
+  .main-header
+    .current-group
+      %h2.current-group__name
+        Currenr-group
+      %ul.member-list
+        Member:
+        %il.member-list__member
+          abcd
+    %a 
+      .main-header__edit-btn
+        edit
+  .messages
+    = render "messages/message"
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
