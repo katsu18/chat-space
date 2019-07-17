@@ -1,8 +1,10 @@
 .message
-  .upper-info
-    %p.upper-info__user
-      user1
-    %p.upper-info__date
-      1234/23/32(fri)
-  %p.message__text
-    おはよう
+  - @messages.each do |message|
+    .upper-info
+      %p.upper-info__user
+        = message.user.name
+      %p.upper-info__date
+        = message.created_at
+    %p.message__text
+      = message.content
+    %img{:src => "#{message.image}"}
