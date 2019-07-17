@@ -31,7 +31,7 @@ $(function(){
       }
       var html = messagePost(post)
       $(".message").append(html)
-      $("form")[0].reset("")
+      $("form")[0].reset()
       $('.form__submit').prop('disabled', false);
       $('.messages').animate({scrollTop: $('.message')[0].scrollHeight});
     })
