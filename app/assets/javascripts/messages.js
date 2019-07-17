@@ -3,7 +3,11 @@ $(function(){
   
   function messagePost(post){
     
-    var html =  '<div class="upper-info"><p class="upper-info__user">'+(post.name)+'</p><p class="upper-info__date">'+(post.date)+'</p></div><p class="message__text">'+(post.content)+'</p><img src="'+(post.image.url)+'">'
+    var html =  `<div class="upper-info">
+                  <p class="upper-info__user">${(post.name)}</p>
+                    <p class="upper-info__date">${(post.date)}</p>
+                      </div><p class="message__text">${(post.content)}</p>
+                        <img src="${(post.image.url)}">`
     return html;
 
   }
@@ -27,8 +31,7 @@ $(function(){
       }
       var html = messagePost(post)
       $(".message").append(html)
-      $("#message_content").val("")
-      $("#message_image").val("")
+      $("form")[0].reset("")
       $('.form__submit').prop('disabled', false);
       $('.messages').animate({scrollTop: $('.message')[0].scrollHeight});
     })
