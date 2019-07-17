@@ -59,7 +59,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
  gem "binding_of_caller"
  gem "mini_magick"
  gem "carrierwave"
+
  gem 'jquery-rails'
+
  gem 'rspec-rails', '~> 3.5'
  gem 'rails-controller-testing'
  gem 'factory_bot_rails'
