@@ -9,8 +9,15 @@ class UsersController < ApplicationController
         render :edit
       end
     end
-  
-    private
+
+
+    def search
+      @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")
+      respond_to do |format| 
+        format.json { render 'index', json: @users } 
+      end
+    end
+
   
     def user_params
       params.require(:user).permit(:name, :email)
