@@ -54,28 +54,28 @@ $(document).on('turbolinks:load', function(){
     };
       $(function(){
         setInterval(reloadMessages, 3000);
-        //10000ミリ秒ごとにupdateという関数を実行する
+        
       });
  
         var reloadMessages = function() {
-        //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
+        
         var last_message_id = $('.message:last').data("message-id"); 
         $.ajax({
-          //ルーティングで設定した通りのURLを指定
+        
           url: `api/messages`,
-          //ルーティングで設定した通りhttpメソッドをgetに指定
+          
           type: 'get',
           dataType: 'json',
-          //dataオプションでリクエストに値を含める
+          
           data: {last_id: last_message_id}
         })
         .done(function(messages) {
-          var insertHTML = '';//追加するHTMLの入れ物を作る
-          messages.forEach(function (messages) {//配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
-            insertHTML = buildHTML(messages); //メッセージが入ったHTMLを取得
-            $('.messages').append(insertHTML);//メッセージを追加
+          var insertHTML = '';
+          messages.forEach(function (messages) {
+            insertHTML = buildHTML(messages); 
+            $('.messages').append(insertHTML);
           })
-          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');//最新のメッセージが一番下に表示されようにスクロールする。
+          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
         })
         
 
