@@ -2,14 +2,13 @@
   .main-header
     .current-group
       %h2.current-group__name
-        Currenr-group
+        = "#{@group.name}"
       %ul.member-list
-        Member:
-        %il.member-list__member
-          abcd
-    %a 
-      .main-header__edit-btn
-        edit
+        Member
+        - @group.users.each do |user|
+          = user.name 
+    .main-header__edit-btn
+      = link_to 'edit', edit_group_path(@group), class: "edit_btn"
   .messages
     = render "messages/message"
   .form
