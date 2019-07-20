@@ -3,9 +3,10 @@ $base-color: #38aef0;
 *{
   box-sizing: border-box;
 }
+
 a{
   text-decoration: none;
-  color: white;
+  color:black;
 }
 .head {
   display: none;
@@ -64,6 +65,9 @@ a{
       display: flex;
       justify-content: space-between;
       border-bottom: solid 1px #eee;
+      &__edit-btn{
+        color:#38aef0;
+      }
       .current-group {
         font-size: 20px;
         color: #333;
@@ -75,7 +79,6 @@ a{
           color: #999999;
           li {
             display: list-item;
-            text-align: -webkit-match-parent;
           }
         }
       }
