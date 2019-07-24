@@ -17,10 +17,12 @@ $(document).on('turbolinks:load', function(){
     $('#user-search-field').on('keyup',function(e){
       e.preventDefault();
     var input = $('#user-search-field').val();
+
+
     $.ajax({
       url: '/users/search', 
       type: 'GET', 
-      data: ('keyword=' + input), 
+      data: ('keyword=' + input),
       processData: false, 
       contentType: false, 
       dataType: 'json' 
@@ -47,7 +49,7 @@ $(document).on('turbolinks:load', function(){
     var html = `<div class='chat-group-user clearfix js-chat-member' id='${userId}'>
                 <input name='group[user_ids][]' type='hidden' value='${userId}'>
                 <p class='chat-group-user__name'>${userName}</p>
-                <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>`;
+                <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn' data-user-id=${userId}>削除</div>`;
     member_list.append(html);
       }
     $(document).on("click", ".user-search-add", function () {
