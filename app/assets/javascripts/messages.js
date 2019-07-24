@@ -52,25 +52,26 @@ $(document).on('turbolinks:load', function(){
     
     };
    
-        var reloadMessages = function() {
-        var last_message_id = $('.message:last').data("message-id"); 
-        $.ajax({
-          url: `api/messages`,
-          type: 'get',
-          dataType: 'json',
-          data: {last_id: last_message_id}
-        })
-        .done(function(messages) {
-          messages.forEach(function (messages) {
-            insertHTML = buildHTML(messages); 
-            $('.messages').append(insertHTML);
-          })
-          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
-        })
-        .fail(function() {
-        });
-      };
+
       $(function(){
+        var reloadMessages = function() {
+          var last_message_id = $('.message:last').data("message-id"); 
+          $.ajax({
+            url: `api/messages`,
+            type: 'get',
+            dataType: 'json',
+            data: {last_id: last_message_id}
+          })
+          .done(function(messages) {
+            messages.forEach(function (messages) {
+              insertHTML = buildHTML(messages); 
+              $('.messages').append(insertHTML);
+            })
+            $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+          })
+          .fail(function() {
+          });
+        };
         setInterval(reloadMessages, 5000);
       });
   });
