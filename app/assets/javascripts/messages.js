@@ -51,13 +51,8 @@ $(document).on('turbolinks:load', function(){
       return html;
     
     };
-      $(function(){
-        setInterval(reloadMessages, 5000);
-        
-      });
- 
+   
         var reloadMessages = function() {
-        
         var last_message_id = $('.message:last').data("message-id"); 
         $.ajax({
           url: `api/messages`,
@@ -75,6 +70,8 @@ $(document).on('turbolinks:load', function(){
         .fail(function() {
         });
       };
-    
+      $(function(){
+        setInterval(reloadMessages, 5000);
+      });
   });
 });
