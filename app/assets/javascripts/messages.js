@@ -41,7 +41,6 @@ $(document).on('turbolinks:load', function(){
       if(message.image.url == null){
         message.image.url = ""
       }
-        debugger
       var html = `<div class="message" data-message-id="${message.id}"> 
                   <div class="upper-info">
                   <p class="upper-info__user">${(message.user_name)}</p>
@@ -52,38 +51,27 @@ $(document).on('turbolinks:load', function(){
       return html;
     
     };
-      $(function(){
-        setInterval(reloadMessages, 3000);
-        
-      });
- 
+   
         var reloadMessages = function() {
-        
         var last_message_id = $('.message:last').data("message-id"); 
         $.ajax({
-        
           url: `api/messages`,
-          
           type: 'get',
           dataType: 'json',
-          
           data: {last_id: last_message_id}
         })
         .done(function(messages) {
-          var insertHTML = '';
           messages.forEach(function (messages) {
             insertHTML = buildHTML(messages); 
             $('.messages').append(insertHTML);
           })
           $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
         })
-        
-
-        
         .fail(function() {
-          console.log('error');
         });
       };
-    
+      $(function(){
+        setInterval(reloadMessages, 5000);
+      });
   });
 });
